@@ -1,0 +1,44 @@
+<%# SPDX-FileCopyrightText: 2024 Tuan Anh %>
+<%# SPDX-License-Identifier: MIT %>
+
+<%
+  # This partial is rendered by a hook. It adds the 'Generate Content' button
+  # and the necessary JavaScript to the issue page.
+%>
+
+<p>
+  <button type="button" id="ai-writer-btn" class="button icon icon-magic">
+    <%= l(:button_ai_writer_generate_content) %>
+  </button>
+</p>
+
+<%# This container will hold the AI-generated content and action buttons %>
+<div id="ai-writer-result-container" style="margin-top: 1em; padding: 1em; border: 1px solid #ddd; display: none;"></div>
+
+<%= javascript_include_tag 'ai_writer.js', plugin: 'redmine_ai_writer' %>
+
+<script type="text/javascript">
+  // Pass data from Rails to our JavaScript
+  document.addEventListener('DOMContentLoaded', function() {
+    AIWriter.init({
+      buttonId: 'ai-writer-btn',
+      resultContainerId: 'ai-writer-result-container',
+      issueId: <%= issue.id %>,
+      generateUrl: '<%= escape_javascript(ai_writer_generate_content_path(issue_id: issue.id)) %>',
+      applyUrlTemplate: '<%= escape_javascript(url_for(controller: 'ai_writer', action: 'apply_content', issue_id: issue.id, content_id: 'CONTENT_ID_PLACEHOLDER')) %>',
+      updateUrlTemplate: '<%= escape_javascript(ai_writer_update_content_path(content_id: 'CONTENT_ID_PLACEHOLDER')) %>',
+      promptFieldId: 'issue_custom_field_values_<%= settings['prompt_custom_field_id'] %>',
+      descriptionFieldId: 'issue_description',
+      pageTitleSelector: 'h2', // Selector for the issue title
+      csrfToken: '<%= form_authenticity_token %>',
+      text: {
+        generating: '<%= escape_javascript(l(:button_ai_writer_generating)) %>',
+        generateContent: '<%= escape_javascript(l(:button_ai_writer_generate_content)) %>',
+        agree: '<%= escape_javascript(l(:button_ai_writer_agree)) %>',
+        retry: '<%= escape_javascript(l(:button_ai_writer_retry)) %>',
+        edit: '<%= escape_javascript(l(:button_ai_writer_edit)) %>',
+        save: '<%= escape_javascript(l(:button_ai_writer_save)) %>'
+      }
+    });
+  });
+</script> 

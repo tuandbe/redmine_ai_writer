@@ -1,0 +1,29 @@
+<%# SPDX-FileCopyrightText: 2024 Tuan Anh %>
+<%# SPDX-License-Identifier: MIT %>
+<p>
+  <label for="settings_openai_api_key"><%= l(:label_ai_writer_openai_api_key) %></label>
+  <%= text_field_tag 'settings[openai_api_key]', @settings['openai_api_key'], size: 60 %>
+</p>
+
+<p>
+  <label for="settings_tracker_id"><%= l(:label_ai_writer_tracker_id) %></label>
+  <%= text_field_tag 'settings[tracker_id]', @settings['tracker_id'], size: 10 %>
+  <em><%= l(:label_ai_writer_tracker_id_info) %></em>
+</p>
+
+<p>
+  <label for="settings_prompt_custom_field_id"><%= l(:label_ai_writer_prompt_cf_id) %></label>
+  <%= text_field_tag 'settings[prompt_custom_field_id]', @settings['prompt_custom_field_id'], size: 10 %>
+  <em><%= l(:label_ai_writer_prompt_cf_id_info) %></em>
+</p>
+
+<p>
+  <label for="settings_prompt_template_custom_field_id"><%= l(:label_ai_writer_prompt_template_cf_id) %></label>
+  <%= text_field_tag 'settings[prompt_template_custom_field_id]', @settings['prompt_template_custom_field_id'], size: 10 %>
+  <em><%= l(:label_ai_writer_prompt_template_cf_id_info) %></em>
+</p>
+
+<p>
+  <label for="settings_system_prompt"><%= l(:label_ai_writer_system_prompt) %></label>
+  <%= text_area_tag 'settings[system_prompt]', @settings['system_prompt'], rows: 5, class: 'wiki-edit' %>
+</p>

@@ -1,0 +1,26 @@
+# Vietnamese strings go here for Rails i18n
+vi:
+  # Settings
+  label_ai_writer_openai_api_key: "OpenAI API Key"
+  label_ai_writer_tracker_id: "ID của Tracker"
+  label_ai_writer_tracker_id_hint: "ID của tracker nơi nút AI Writer sẽ hiển thị (ví dụ: 12)."
+  label_ai_writer_prompt_custom_field_id: "ID của Custom Field cho Prompt"
+  label_ai_writer_prompt_custom_field_id_hint: "ID của custom field được sử dụng để người dùng nhập prompt."
+  label_ai_writer_system_prompt: "System Prompt (Lời nhắc cho hệ thống)"
+
+  # Button
+  button_ai_writer_generate_content: "Sáng tạo nội dung"
+  button_ai_writer_generating: "Đang tạo..."
+  button_ai_writer_preparing_form: "Đang chuẩn bị..."
+  button_ai_writer_agree: "Đồng ý"
+  button_ai_writer_retry: "Tạo lại"
+  button_ai_writer_edit: "Sửa"
+  button_ai_writer_save: "Lưu"
+
+  # Permissions
+  permission_use_ai_writer: "Sử dụng AI Writer"
+  project_module_ai_writer: "AI Writer"
+
+  # Notifications
+  error_ai_writer_api_key_not_set: "OpenAI API Key chưa được cấu hình. Vui lòng liên hệ quản trị viên."
+  error_ai_writer_generation_failed: "Không thể tạo nội dung. Lỗi: %{error_message}" 

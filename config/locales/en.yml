@@ -1,0 +1,23 @@
+# English strings go here for Rails i18n
+en:
+  # AI Writer plugin labels
+  label_ai_writer_openai_api_key: "OpenAI API Key"
+  label_ai_writer_tracker_id: "Tracker ID"
+  label_ai_writer_tracker_id_info: "ID of the tracker where the AI writer button should appear."
+  label_ai_writer_prompt_cf_id: "Prompt Custom Field ID"
+  label_ai_writer_prompt_cf_id_info: "ID of the custom field used for the AI prompt on issues."
+  label_ai_writer_prompt_template_cf_id: "Prompt Template CF ID"
+  label_ai_writer_prompt_template_cf_id_info: "ID of the custom field on parent issues that holds the prompt template."
+  label_ai_writer_system_prompt: "System Prompt"
+  permission_use_ai_writer: "Use AI Writer"
+  project_module_ai_writer: "AI Writer"
+  button_ai_writer_generate: "Generate with AI"
+  button_ai_writer_apply: "Apply"
+  button_ai_writer_save_and_close: "Save & Close"
+  button_ai_writer_cancel: "Cancel"
+  title_ai_writer_modal: "AI Content Generation"
+  label_user_prompt: "Your Prompt"
+  error_ai_writer_api_key_not_set: "OpenAI API key is not configured in the plugin settings."
+  error_ai_writer_prompt_cf_not_set: "The 'Prompt Custom Field ID' is not configured in the plugin settings."
+  error_ai_writer_prompt_is_empty: "The AI prompt for this issue is empty. Please fill it in before generating content."
+  error_ai_writer_generation_failed: "Failed to generate content from AI. Error: %{error_message}"
