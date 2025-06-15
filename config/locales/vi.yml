@@ -9,13 +9,13 @@ vi:
   label_ai_writer_system_prompt: "System Prompt (Lời nhắc cho hệ thống)"
 
   # Button
-  button_ai_writer_generate_content: "Sáng tạo nội dung"
-  button_ai_writer_generating: "Đang tạo..."
-  button_ai_writer_preparing_form: "Đang chuẩn bị..."
-  button_ai_writer_agree: "Đồng ý"
-  button_ai_writer_retry: "Tạo lại"
-  button_ai_writer_edit: "Sửa"
-  button_ai_writer_save: "Lưu"
+  button_ai_writer_generate_content: "✨ Sáng tạo nội dung"
+  button_ai_writer_generating: "⚙️ Đang tạo..."
+  button_ai_writer_preparing_form: "⏳ Đang chuẩn bị..."
+  button_ai_writer_agree: "✅ Đồng ý"
+  button_ai_writer_retry: "🔄 Tạo lại"
+  button_ai_writer_edit: "📝 Sửa"
+  button_ai_writer_save: "💾 Lưu"
 
   # Permissions
   permission_use_ai_writer: "Sử dụng AI Writer"
