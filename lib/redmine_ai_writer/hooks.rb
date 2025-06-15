@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-module RedmineAIWriter
+# Match Zeitwerk inflection: directory redmine_ai_writer => module RedmineAiWriter
+module RedmineAiWriter
   # Hooks for Redmine AI Writer plugin.
   class Hooks < Redmine::Hook::ViewListener
     # Renders the 'Generate Content' button on the issue view page.
