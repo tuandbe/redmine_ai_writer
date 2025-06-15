@@ -1,3 +1,0 @@
-= redmine_ai_writer
-
-Description goes here
