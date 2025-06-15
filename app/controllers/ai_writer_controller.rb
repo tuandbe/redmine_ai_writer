@@ -53,11 +53,14 @@ class AiWriterController < ApplicationController
 
   # Applies the selected AI-generated content to the issue's description.
   def apply_content
-    if @issue.update(description: @content.generated_content)
-      render json: { success: true, message: l(:notice_successful_update) }
-    else
-      render json: { success: false, error: @issue.errors.full_messages.join(', ') }, status: :unprocessable_entity
+    ActiveRecord::Base.transaction do
+      @issue.update!(description: @content.generated_content)
+      @content.update!(status: :applied)
     end
+
+    render json: { success: true, message: l(:notice_successful_update) }
+  rescue ActiveRecord::RecordInvalid => e
+    render json: { success: false, error: e.record.errors.full_messages.join(', ') }, status: :unprocessable_entity
   end
 
   # Updates the content of an AI writer record after user edits.
@@ -98,7 +101,8 @@ class AiWriterController < ApplicationController
 
   def build_chat_parameters(user_prompt)
     settings = Setting.plugin_redmine_ai_writer
-    memories = AiWriterContent.where(issue_id: @project.issues.select(:id)).order(created_at: :desc).limit(5)
+    # Retrieve only the latest approved (applied) memories for the current issue
+    memories = AiWriterContent.applied.where(issue_id: @issue.id).order(created_at: :desc).limit(5)
     
     {
       model: "gpt-3.5-turbo",

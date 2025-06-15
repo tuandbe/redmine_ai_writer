@@ -8,4 +8,6 @@ class AiWriterContent < ActiveRecord::Base
   validates :issue, presence: true
   validates :author, presence: true
   validates :generated_content, presence: true
+
+  enum status: { pending: 0, applied: 1 }
 end 
