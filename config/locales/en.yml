@@ -21,3 +21,6 @@ en:
   error_ai_writer_prompt_cf_not_set: "The 'Prompt Custom Field ID' is not configured in the plugin settings."
   error_ai_writer_prompt_is_empty: "The AI prompt for this issue is empty. Please fill it in before generating content."
   error_ai_writer_generation_failed: "Failed to generate content from AI. Error: %{error_message}"
+  label_ai_writer_openai_model: "OpenAI Model (e.g., gpt-3.5-turbo)"
+  label_ai_writer_temperature: "Temperature"
+  label_ai_writer_temperature_info: "Sampling temperature, between 0 and 2. Higher values = more creative."

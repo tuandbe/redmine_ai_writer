@@ -7,6 +7,9 @@ vi:
   label_ai_writer_prompt_custom_field_id: "ID của Custom Field cho Prompt"
   label_ai_writer_prompt_custom_field_id_hint: "ID của custom field được sử dụng để người dùng nhập prompt."
   label_ai_writer_system_prompt: "System Prompt (Lời nhắc cho hệ thống)"
+  label_ai_writer_openai_model: "Mô hình OpenAI (ví dụ: gpt-3.5-turbo)"
+  label_ai_writer_temperature: "Nhiệt độ (temperature)"
+  label_ai_writer_temperature_info: "Giá trị 0-2, cao hơn nghĩa là sáng tạo hơn."
 
   # Button
   button_ai_writer_generate_content: "✨ Sáng tạo nội dung"

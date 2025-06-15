@@ -102,12 +102,16 @@ class AiWriterController < ApplicationController
   def build_chat_parameters(user_prompt)
     settings = Setting.plugin_redmine_ai_writer
     # Retrieve only the latest approved (applied) memories for the current issue
-    memories = AiWriterContent.applied.where(issue_id: @issue.id).order(created_at: :desc).limit(5)
+    memories = AiWriterContent.applied.where(issue_id: @project.issues.select(:id)).order(updated_at: :desc).limit(5)
+    
+    model_name = settings['openai_model'].presence || 'gpt-3.5-turbo'
+    temperature_value = settings['temperature'].presence || '0.7'
+    temperature_value = temperature_value.to_f
     
     {
-      model: "gpt-3.5-turbo",
+      model: model_name,
       messages: build_messages(settings['system_prompt'], user_prompt, memories),
-      temperature: 0.7
+      temperature: temperature_value
     }
   end
 

@@ -13,7 +13,9 @@ Redmine::Plugin.register :redmine_ai_writer do
     'tracker_id' => '12',
     'prompt_custom_field_id' => '',
     'prompt_template_custom_field_id' => '',
-    'system_prompt' => 'Write a post for your business to be published on any social media platform, based on the provided title and user prompt.'
+    'system_prompt' => 'Write a post for your business to be published on any social media platform, based on the provided title and user prompt.',
+    'openai_model' => 'gpt-3.5-turbo',
+    'temperature' => '0.7'
   }, partial: 'settings/ai_writer_settings'
 
   project_module :ai_writer do
