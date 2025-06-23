@@ -9,5 +9,18 @@ class AiWriterContent < ActiveRecord::Base
   validates :author, presence: true
   validates :generated_content, presence: true
 
-  enum status: { pending: 0, applied: 1 }
+  # Status enum
+  enum status: { draft: 0, applied: 1 }
+
+  # Scope for finding applied contents
+  scope :applied, -> { where(status: :applied) }
+
+  # Default status
+  after_initialize :set_default_status, if: :new_record?
+
+  private
+
+  def set_default_status
+    self.status ||= :draft
+  end
 end 

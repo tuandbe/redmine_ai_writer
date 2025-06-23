@@ -9,6 +9,8 @@ module RedmineAiWriter
       included do
         # Single unified callback runs for both create and update right before saving.
         before_save :ai_writer_generate_prompt_if_needed
+        # Add association to automatically delete AI writer contents when issue is deleted
+        has_many :ai_writer_contents, dependent: :destroy
       end
 
       private
